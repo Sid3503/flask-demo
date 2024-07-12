@@ -12,13 +12,11 @@ model = joblib.load("model.joblib")
 @app.route("/")
 @app.route("/home")
 def home():
-    time.sleep(1)
     return render_template("home.html", title="Home")
 
 
 @app.route("/predict", methods=["GET", "POST"])
 def predict():
-    time.sleep(1)
     form = inputForm()
     if form.validate_on_submit():
         x_new = pd.DataFrame(dict(
